@@ -1,0 +1,11 @@
+.para-color{
+    color: red;
+}
+.query{
+    color: yellow;
+}
+.form{
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(147, 147, 255);
+}

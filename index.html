@@ -4,14 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
     <title>JS-HTML-DOM</title>
 </head>
 <body>
     <h1>Hello Friends</h1>
+    <img id="image1" src="images/First Certificate.png" alt="A certificate of Responsive Web Design">
     <h2>Changing content of paragragh with click on the button</h2>
     <p id="demo">My name is Shahzaib</p>
-    <button type="button" onclick="changeParagraph()">Change Name</button>
-    <button type="button" onclick="changeHeaderOne()">Change Heading (Click Twice!)</button>
+    <button type="button" onclick="changeParagraph()">Change Name & Image</button>
+    <button type="button" ondblclick="changeHeaderOne()">Change Heading (Click Twice!)</button>
+    <p class="para-color">This is Paragraph One</p>
+    <p class="para-color">This is Paragraph Two</p>
+    <button class="para-button" onclick="changeParaColor()">Drag Me!</button>
+    <p class="query">Change the color</p>
+    <p class="query">Change the color</p>
+    <button onclick="changeParaColorQuery()">Change Color</button>
+    <div class="form">
+        <h2>Javascript HTML DOM</h2>
+        <p>Finding Html elements using documents.forms</p>
+        <form  id="frm1" action="check.php">
+            <label for="fname">First Name</label>
+            <input type="text" name="fname" id="fname" value="Moin">
+            <br>
+            <label for="lname">Last Name</label>
+            <input type="text" name="lname" id="lname" value="uddin">
+            <input type="submit" value="Submit">
+        </form>
+        <p>These are the values of each element in the form:</p>
+        <p id="check"></p>
+    </div>
 </body>
 </html>
