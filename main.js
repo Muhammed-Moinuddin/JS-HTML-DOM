@@ -18,3 +18,18 @@ for (let i = 0; i < x.length ;i++) {
   text += x.elements[i].value + "<br>";
 }
 document.getElementById("check").innerHTML = text;
+function validateForm(){
+    let x = document.forms["myForm"]["fname"];
+    if (x = ""){
+        alert("Name must be filled out");
+        return false
+    }
+}
+function myfunction(){
+    let x = document.getElementById("numb").value;
+    if (isNaN(x) || x < 1 || x > 10) {
+        document.getElementById("number-text").innerHTML = "Number is not Valid";
+    } else {
+        document.getElementById("number-text").innerHTML = "Number is Valid";
+    }
+}
