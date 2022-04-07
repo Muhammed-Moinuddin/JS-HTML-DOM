@@ -33,3 +33,27 @@ function myfunction(){
         document.getElementById("number-text").innerHTML = "Number is Valid";
     }
 }
+function changeHeading() {
+    document.getElementById("changeH1").style.color = "blue";
+}
+//Function for animation
+function myMove(){
+    let id = null;
+    const elem = document.getElementById("animate");
+    let pos = 0;
+    clearInterval(id);
+    //The clearInterval() method clears a timer set with the setInterval() method.
+    id = setInterval(frame, 5);
+    /*The setInterval() method calls a function at specified intervals (in milliseconds).
+    The setInterval() method continues calling the function until clearInterval() is called, or the window is closed.
+    1 second = 1000 milliseconds. */
+    function frame(){
+        if (pos == 350) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+        }
+    }
+}
