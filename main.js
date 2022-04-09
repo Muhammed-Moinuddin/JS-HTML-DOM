@@ -57,3 +57,41 @@ function myMove(){
         }
     }
 }
+function checkCookies(){
+    let text = "";
+    if (navigator.cookieEnabled == true){
+        text = "Cookies are Enabled";
+    } else {
+        text = "Cookies are Disabled";
+    }
+    document.getElementById("onload-cookies").innerHTML = text;
+}
+function upperCase() {
+    const x = document.getElementById("input-1");
+    x.value = x.value.toUpperCase();
+}
+function mOver(obj){
+    obj.innerHTML = "Thank You"
+}
+function mOut(obj){
+    obj.innerHTML = "Mouse Over Me"
+}
+function mUp(obj){
+    obj.style.backgroundColor = "yellow"
+    obj.style.color = "green"
+    obj.innerHTML = "Thank You!"
+}
+function mDown(obj){
+    obj.style.backgroundColor = "green"
+    obj.style.color = "yellow"
+    obj.innerHTML = "Release Me"
+}
+// document.getElementById("btn-1").addEventListener("click", displayDate);
+// function displayDate(){
+//     document.getElementById("event-listener-1").innerHTML = Date();
+// }
+document.getElementById("btn-1").addEventListener("click", displayDate);
+
+function displayDate() {
+  document.getElementById("event-listener-1").innerHTML = Date();
+}

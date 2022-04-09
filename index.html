@@ -8,7 +8,7 @@
     <script src="main.js"></script>
     <title>JS-HTML-DOM</title>
 </head>
-<body>
+<body onload="checkCookies()">
     <h1>Hello Friends</h1>
     <img id="image1" src="images/First Certificate.png" alt="A certificate of Responsive Web Design">
     <h2>Changing content of paragragh with click on the button</h2>
@@ -36,7 +36,7 @@
         <p id="check"></p>
     </div>
     <h2>Javascript Validation</h2>
-    <form action="/action.php" method="post" name="myForm" onsubmit="return validateForm()">
+    <form action="/action.php" method="post" name="myForm" onsubmit="validateForm()">
         Name: <input type="text" name="fname">
         <input type="submit" value="Submit">
     </form>
@@ -53,5 +53,20 @@
     <div id="container">
         <div id="animate"></div>
     </div>
+    <h2 onclick="this.innerHTML = 'Oops!'">Click Here</h2>
+    <h2 id="onload-cookies"></h2>
+    <h2>Javascript HTML Events</h2>
+    <label for="input-1">Enter your Name:</label>
+    <input type="text" id="input-1" name="input-1" onchange="upperCase()">
+    <br>
+    <div class="mouse-event-1" onmouseover="mOver(this)" onmouseout="mOut(this)">
+        Mouse Over Me
+    </div>
+    <div class="mouse-event-2" onmouseup="mUp(this)" onmousedown="mDown(this)">
+        Thank You!
+    </div>
+    <br>
+    <button id="btn-1">Try It</button>
+    <p id="event-listener-1"></p>
 </body>
 </html>
