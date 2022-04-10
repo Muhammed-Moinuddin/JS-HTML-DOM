@@ -14,10 +14,10 @@ function changeParaColorQuery() {
 }
 const x = document.forms["frm1"];
 let text = "";
-for (let i = 0; i < x.length ;i++) {
-  text += x.elements[i].value + "<br>";
-}
-document.getElementById("check").innerHTML = text;
+// for (let i = 0; i < x.length ; i++) {
+//   text += x.elements[i].value + "<br>";
+// }
+//document.getElementById("check").innerHTML = text;
 function validateForm(){
     let x = document.forms["myForm"]["fname"];
     if (x = ""){
@@ -90,8 +90,80 @@ function mDown(obj){
 // function displayDate(){
 //     document.getElementById("event-listener-1").innerHTML = Date();
 // }
-document.getElementById("btn-1").addEventListener("click", displayDate);
+//document.getElementById("btn-1").addEventListener('click', displayDate);
 
 function displayDate() {
   document.getElementById("event-listener-1").innerHTML = Date();
+}
+window.onload = function(){
+//Bubbling Concept
+document.querySelector("#grandParent").addEventListener('click', (e) => {
+    console.log("GrandParent Clicked!");
+});
+document.querySelector("#parent")
+.addEventListener('click', () => {
+    console.log("Parent Clicked!");
+});
+document.querySelector("#child")
+.addEventListener('click', () => {
+    console.log("Child Clicked!");
+});
+//Capturing Concept
+document.querySelector("#grandParent2").addEventListener('click', () => {
+    console.log("GrandParent Clicked!");
+} , true);
+document.querySelector("#parent2")
+.addEventListener('click', () => {
+    console.log("Parent Clicked!");
+} , true);
+document.querySelector("#child2")
+.addEventListener('click', () => {
+    console.log("Child Clicked!");
+} , true);
+//Understanding W3C Standard i.e First Capturing Then Bubbling
+document.querySelector("#grandParent3").addEventListener('click', () => {
+    console.log("GrandParent Clicked!");
+} , true);
+document.querySelector("#parent3")
+.addEventListener('click', () => {
+    console.log("Parent Clicked!");
+} , false);
+document.querySelector("#child3")
+.addEventListener('click', () => {
+    console.log("Child Clicked!");
+} , true);
+//Propagation Concept
+document.querySelector("#grandParent4").addEventListener('click', () => {
+    console.log("GrandParent Clicked!");
+} , false);
+document.querySelector("#parent4")
+.addEventListener('click', (e) => {
+    console.log("Parent Clicked!");
+    e.stopPropagation();
+} , false);
+document.querySelector("#child4")
+.addEventListener('click', () => {
+    console.log("Child Clicked!");
+} , false);
+//
+var z = document.getElementById("two-events");
+z.addEventListener('click', () => {
+    console.log("Hello World")
+    alert ("Hello World");
+});
+z.addEventListener('click', () => {
+    console.log("This function was also executed")
+    alert ("This function was also executed");
+});
+window.addEventListener("resize" , () => {
+    document.getElementById("window-handler").innerHTML = Math.random();
+});
+}
+//Javascript removeEventListener()
+document.getElementById("event-div").addEventListener("mousemove", myFunction1);
+function myFunction1(){
+    document.getElementById("display-random-number").innerHTML = Math.random();
+}
+function removeHandler() {
+    document.getElementById("event-div").removeEventListener("mousemove", myFunction1);
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Check</title>
+</head>
+<body>
+    <h1>Bubbling Concept</h1>
+    <div id="grandParent" class="bubble">
+        <div id="parent" class="bubble">
+            <div id="child" class="bubble">
+
+            </div>
+        </div>
+    </div>
+    <h1>Capturing Concept</h1>
+    <div id="grandParent2" class="bubble">
+        <div id="parent2" class="bubble">
+            <div id="child2" class="bubble">
+
+            </div>
+        </div>
+    </div>
+    <h1>Understanding W3C Standard i.e First Capturing Then Bubbling</h1>
+    <div id="grandParent3" class="bubble">
+        <div id="parent3" class="bubble">
+            <div id="child3" class="bubble">
+
+            </div>
+        </div>
+    </div>
+    <h1>Stop Propagation Concept (Bubbling & Capturing)</h1>
+    <div id="grandParent4" class="bubble">
+        <div id="parent4" class="bubble">
+            <div id="child4" class="bubble">
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <h1>Javascript removeEventListener()</h1>
+    <div id="event-div">
+        <p>This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.</p>
+        <p>Click the button to remove the div's event handler.</p>
+        <button id="remove-btn" onclick="removeHandler()">Remove</button>
+    </div>
+    <p id="display-random-number"></p>
+    <br>
+    <a href="index.html">Move to Index Page</a>
+
+</body>
+<script src="main.js" defer="defer"></script>
+</html>
