@@ -97,17 +97,25 @@ function displayDate() {
 }
 window.onload = function(){
 //Bubbling Concept
-document.querySelector("#grandParent").addEventListener('click', (e) => {
-    console.log("GrandParent Clicked!");
-});
-document.querySelector("#parent")
-.addEventListener('click', () => {
+var b = document.querySelector("#grandParent");
+if (b) {
+    b.addEventListener('click', (e) => {
+        console.log("GrandParent Clicked!");
+    });
+}
+var c = document.querySelector("#parent")
+if (c) {
+
+c.addEventListener('click', () => {
     console.log("Parent Clicked!");
 });
-document.querySelector("#child")
-.addEventListener('click', () => {
-    console.log("Child Clicked!");
-});
+}
+var d = document.querySelector("#child")
+if (d) {
+    d.addEventListener('click', () => {
+        console.log("Child Clicked!");
+    });
+}
 //Capturing Concept
 document.querySelector("#grandParent2").addEventListener('click', () => {
     console.log("GrandParent Clicked!");
@@ -160,10 +168,46 @@ window.addEventListener("resize" , () => {
 });
 }
 //Javascript removeEventListener()
-document.getElementById("event-div").addEventListener("mousemove", myFunction1);
+var a = document.getElementById("event-div");
+if (a) {
+    a.addEventListener("mousemove", myFunction1);
+}
 function myFunction1(){
     document.getElementById("display-random-number").innerHTML = Math.random();
 }
 function removeHandler() {
     document.getElementById("event-div").removeEventListener("mousemove", myFunction1);
 }
+//Learning Nodes
+document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeValue;
+document.getElementById("2").innerHTML = document.getElementById("1").childNodes[0].nodeValue;
+document.getElementById("nodeName2").innerHTML = document.getElementById("nodeName1").nodeName; //Will show the name
+document.getElementById("nodeName2").innerHTML = document.getElementById("nodeName1").nodeValue; //Will show nothing as nodeValue for element is null
+document.getElementById("nodeName2").innerHTML = document.getElementById("nodeName1").nodeType;
+//Creating HTML Element and adding Nodes
+const somePara = document.createElement("p");
+const node = document.createTextNode("This is a New Paragraph");
+somePara.appendChild(node);
+const thatElement = document.getElementById("nodeDiv1");
+thatElement.appendChild(somePara);
+const thatChild = document.getElementById("nodeP1");
+thatElement.insertBefore(somePara,thatChild);
+document.getElementById("nodeP2").remove();
+const somePara2 = document.createElement("p");
+const node2 = document.createTextNode("This is a Another New Paragraph");
+somePara2.appendChild(node2);
+const thatElement2 = document.getElementById("nodeDiv1");
+thatElement2.appendChild(somePara2);
+const parent = document.getElementById("nodeDiv1");
+const child = document.getElementById("nodeP1");
+parent.replaceChild(somePara2,child);
+//The HTMLCollection Object
+const myCollection = document.getElementById("collectionDiv1").getElementsByTagName("p");
+document.getElementById("check1").innerHTML = "The inner HTML of the second Paragraph is: " + myCollection[1].innerHTML;
+console.log(myCollection.length);
+function collectionFunction() {
+    const myCollection = document.getElementById("collectionDiv1").getElementsByTagName("p");
+    for (let i = 0 ; i < myCollection.length ; i++) {
+        myCollection[i].style.color = "blue";
+    }
+  }

@@ -8,7 +8,11 @@
 
     <title>JS-HTML-DOM</title>
 </head>
-<body onload="checkCookies()">
+<body onload="checkCookies()" >
+    <h1 id="id01">My First Page</h1>
+    <p id="id02"></p>
+    <h1 id="1">My Second Heading</h1>
+    <p id="2"></p>
     <h1>Hello Friends</h1>
     <img id="image1" src="images/First Certificate.png" alt="A certificate of Responsive Web Design">
     <h2>Changing content of paragragh with click on the button</h2>
@@ -76,8 +80,24 @@
     <!-- Add an Event Handler to the window Object -->
     <p>Adding an event Handler to a Window Object (eventlistener can be used with any other HTML DOM Objects)</p>
     <p id="window-handler"></p>
-    <br> <br>
+    <h2 id="nodeName1">I am H2</h2>
+    <p id="nodeName2"></p>
+    <h1>Javascript HTML DOM</h1>
+    <p>Add a new HTML Element</p>
+    <div id="nodeDiv1">
+        <p>This is paragraph 1</p>
+        <p>This is paragraph 2</p>
+    </div>
+    <div id="collectionDiv1">
+        <h2>Javascript HTML Collection Object</h2>
+        <p>Hello World!</p>
+        <p>Hello Norway!</p>
+        <p id="check1"></p>
+      </div>
+      <button onclick="collectionFunction()">Use It</button>
+    <br>
+    <br>
     <a href="check.html">Move to Check Page</a>
 </body>
-<script src="main.js" ></script>
+<script src="main.js" defer></script>
 </html>
