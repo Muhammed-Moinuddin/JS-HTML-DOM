@@ -211,3 +211,7 @@ function collectionFunction() {
         myCollection[i].style.color = "blue";
     }
   }
+//JavaScript HTML DOM Node Lists
+const myNodeList = document.getElementById("collectionDiv2").querySelectorAll("p");
+document.getElementById("check2").innerHTML = "The innerHTML of second Paragraph is " + myNodeList[1].innerHTML;
+console.log(myNodeList.length);
